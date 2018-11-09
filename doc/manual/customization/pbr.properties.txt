@@ -1,0 +1,7 @@
+#pbr database settings
+#Thu May 08 11:55:02 PDT 2003
+system.db.host=virology.uvic.ca
+system.db.pass=pox
+system.db.user=viewer
+system.db.port=4440
+system.db.database=Pocsdb

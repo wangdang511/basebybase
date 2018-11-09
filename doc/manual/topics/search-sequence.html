@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+    <TITLE>BBB Help - Search Sequence</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="+3">Base-By-Base Help</FONT><BR>
+<FONT SIZE="+2">Searching</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<P>
+    BBB is able to map sequence searches for strings and regular expressions. Two types of searching are
+    supported - <A HREF="#RE">Regular Expression</A> and <A HREF="#Fuzzy">Fuzzy</A>:
+</P>
+<UL>
+    <LI>
+        <A NAME="RE"><B>Regular Expression (RE)</B></A> - <I>precise pattern matching</I>
+        <P>
+            Regular expressions allow for searching of precise patterns which may include optional sections and/or
+            repeated sequences. For detailed help on regular expressions, please see
+            <A HREF="http://www.perl.com/doc/manual/html/pod/perlre.html">The Perl Regular Expression</A>
+            page for more information.
+        </P>
+		<PRE>
+        <TABLE BORDER="1" CELLSPACING="0">
+        	<CAPTION>
+        		Examples of Regular Expression Searching
+        	</CAPTION>
+        	<TR>
+        		<TH>Regular Expression</TH>
+        		<TH>What it matches</TH>
+        	</TR>	        	
+        	<TR>
+        		<TD>ACT</TD>
+        		<TD>ACT</TD>
+        	</TR>
+        	<TR>
+        		<TD>[AC]T</TD>
+        		<TD>A or C followed by T</TD>
+        	</TR>
+        	<TR>
+        		<TD>AC[^T]ACT</TD>
+        		<TD>AC followed by anything BUT a T followed by ACT</TD>
+        	</TR>
+        	<TR>
+        		<TD>ACT*</TD>
+        		<TD>AC followed by 0 or more T's</TD>
+        	</TR>
+        	<TR>
+        		<TD>(ACT)*</TD>
+        		<TD>ACT repeated 0 or more times</TD>
+        	</TR>
+        	<TR>
+        		<TD>(ACT)+</TD>
+        		<TD>ACT repeated 1 or more times</TD>
+        	</TR>
+        	<TR>
+        		<TD>(ACT)?</TD>
+        		<TD>ACT repeated 0 or 1 times</TD>
+        	</TR>
+        	<TR>
+        		<TD>(ACT){n}</TD>
+        		<TD>ACT repeated n times</TD>
+        	</TR>
+        	<TR>
+        		<TD>(ACT){n,}</TD>
+        		<TD>ACT repeated at least n times</TD>
+        	</TR>
+        	<TR>
+        		<TD>(ACT){n,m}</TD>
+        		<TD>ACT repeated at least n times but not more than m times</TD>
+        	</TR>
+        	<TR>
+        		<TD>((AC)[TA]){n}</TD>
+        		<TD>AC followed by T or A - repeated n times</TD>
+        	</TR>
+        	
+        </TABLE>
+        </PRE>
+    </LI>
+    <LI>
+        <A NAME="Fuzzy"><B>Fuzzy</B></A> - <I>close pattern matching (only for nucleotides)</I>
+        <P>
+            With Base-By-Base, it is possible to search within each sequence for a given motif accounting
+            for ambiguities and mismatches. The Fuzzy Motif Search allows users to enter in an expression pattern
+            (see below for an explanation of the pattern grammar used) as well as a maximum number of mismatches
+            tolerated in a search hit. BBB then searches marked sequences for this motif and displays a list of hits
+            sortable by confidence or by location along the sequence. In addition to the ambiguities created by
+            mismatches, users may enter in IUB ambiguity codes, which are also indicated below.
+        </P>
+        	<PRE>
+	        <TABLE BORDER="1" CELLSPACING="0">
+				<CAPTION>
+        			Examples of Fuzzy Motif Searching
+        		</CAPTION>
+	        	<TR>
+	        		<TH>Fuzzy Expression</TH>
+	        		<TH>What it matches</TH>
+	        	</TR>	        	
+	        	<TR>
+	        		<TD>ACT</TD>
+	        		<TD>an A, C, T pattern</TD>
+	        	</TR>
+	        	<TR>
+	        		<TD>[AC]T</TD>
+	        		<TD>an A or a C followed by a T</TD>
+	        	</TR>
+	        	<TR>
+	        		<TD>{AC}T</TD>
+	        		<TD>anything BUT an A or a C followed by a T</TD>
+	        	</TR>
+	        	<TR>
+	        		<TD>ACT(1,3)</TD>
+	        		<TD>an A then C followed by 1, 2 or 3 T's</TD>
+	        	</TR>
+	        </TABLE>
+	        </PRE>
+        <P>
+            NOTE: When counting mismatches, [] and {} count as a single match or mismatch.
+            As well, if matching T(2,4) and only 1 T is found, this counts as a single mismatch.
+            <BR><BR>
+            NOTE: This grammar is similar to that of the program
+            <A HREF="http://emboss.sourceforge.net/apps/release/5.0/emboss/apps/fuzznuc.html">fuzznuc</A> which is
+            included in the
+            EMBOSS suite of bioinformatics software.
+            <BR><BR>
+        </P>
+        </P>
+        <table border="1" cellspacing="0" cellpadding="3" summary="Table of IUPAC Ambiguity Codes">
+            <CAPTION>
+                Table of IUPAC Ambiguity Codes
+            </CAPTION>
+	        <tr> <th>IUPAC-IUB/GCG Code</th> <th>Meaning</th> <th>Complement</th> </tr>
+	        <tr> <th>A</th>   <td>A</td> <td>T</td> </tr>
+	        <tr> <th>C</th>   <td>C</td> <td>G</td> </tr>
+	        <tr> <th>G</th>   <td>G</td> <td>C</td> </tr>
+	        <tr> <th>T/U</th> <td>T</td> <td>A</td> </tr>
+	        <tr> <th>M</th>    <td>A or C</td> <td>K</td> </tr>
+	        <tr> <th>R</th>    <td>A or G</td> <td>Y</td> </tr>
+	        <tr> <th>W</th>    <td>A or T</td> <td>W</td> </tr>
+	        <tr> <th>S</th>    <td>C or G</td> <td>S</td> </tr>
+	        <tr> <th>Y</th>    <td>C or T</td> <td>R</td> </tr>
+	        <tr> <th>K</th>    <td>G or T</td> <td>M</td> </tr>
+	        <tr> <th>V</th>    <td>A or C or G</td> <td>B</td> </tr>
+	        <tr> <th>H</th>    <td>A or C or T</td> <td>D</td> </tr>
+	        <tr> <th>D</th>    <td>A or G or T</td> <td>H</td> </tr>
+	        <tr> <th>B</th>    <td>C or G or T</td> <td>V</td> </tr>
+	        <tr> <th>X/N</th>  <td>G or A or T or C</td>     <td>X</td> </tr>
+	        <tr> <th>.</th>    <td>not G or A or T or C</td> <td>.</td> </tr>
+        </table>
+    </LI>
+</UL>
+
+</BODY>
+</HTML>

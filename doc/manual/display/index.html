@@ -1,0 +1,169 @@
+<HTML>
+<HEAD><TITLE>BBB - The Main Display</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<FONT SIZE="+3">Base-By-Base Help</FONT><BR>
+<FONT SIZE="+2">The Main Display</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<P>
+    Below is a view of the main Base-By-Base display. This shows a general use situation in BBB comparing two viruses.
+    The display is highlighted with numbers indicating interesting or useful features of the display. Each is listed
+    below with a description of the feature, as well as a description of how to use it.</P>
+<IMG SRC="../images/newdisplay.jpg"/><BR>
+<OL>
+    <LI><B>Mouse Modes</B>
+        <P>
+            Base-By-Base currently has three mouse action modes. <B>Edit Mode</B> allows the user to insert and remove
+            gaps from the sequences displayed on the screen. As sequence edits are made, the difference row is updated
+            in real time. <B>Glue Mode</B> will move contiguous sections within a gap. For example, if the user had the
+            following sequence:
+                <pre>
+    AA----TCTAGTC----TAT
+                </pre>
+        they could click and drag the 'TCTAGTC' fragment left and right within the larger gap region. Be aware that
+        sequence 'blocks' will adhere to each other if they come in contact, forming a larger block. In <B>Select
+            Mode</B>, users can select regions of sequence upon which to act using any of the features in the menus
+        above the display.
+        </P></LI>
+    <LI><B>Undo/Redo</B>
+        <P>
+            Users may undo inserts and deletes that have been done in the past. This allows for correction if too many
+            gaps were inserted or too many gaps deleted.
+        </P></LI>
+    <LI><B>Difference Display</B>
+        <P>
+            Base-By-Base visually cues the differences between sequences by displaying coloured blocks indicating the
+            type of difference. Below is a listing of the types of differences displayed in the difference pane.
+        </P><PRE>
+
+                    Substitution: <FONT COLOR="blue"><B>BLUE</B></Font>
+                    Deletion:     <FONT COLOR="red"><B>RED</B></FONT>
+                    Insertion:    <FONT COLOR="green"><B>GREEN</B></FONT>
+                    </PRE>
+        <P>
+            This difference array is updated in real time as gaps are inserted and deleted. Left-clicking on a
+            difference or series of similar differences will select the region of the alignment they represent in each
+            of the selected sequences.
+        </P></LI>
+    <LI><B>Three Frame Translation</B>
+        <P>
+            To turn on the three frame translation, click on the 'Show Translation' button on the sequence toolbar (to
+            the left of the main display). See the <a href="../toolbar/index.html">Toolbar</a> section for more
+            information.
+        </P>
+        <P>
+            The three frame translations shows each frame of the sequence translated into the amino acids they
+            represent. The frames hold across the entire sequence with allowances made for gaps in the sequence.
+            Depending on preference, users may view the translation spaced out with arrows or with spaces. If arrows are
+            chosen, the translation displays an arrow after the amino acid character that represents the sequence that
+            coded for that amino acid. This is not always obvious due to the possibility of multiple gaps in random
+            locations. If a gap occurs in the sequence that does not interrupt a codon, gaps are displayed in the
+            translation as well.
+        </P>
+                <PRE>
+                For example:
+                CT----ACCCAGGAAAA-GCCAACC--AACC----TCGATCTCTTGT
+                L=====>P=>R=>K=>S==>Q=>P===>T=>----S=>I=>S=>C=>
+                </PRE>
+        <P>
+            In addition to displaying the amino acids in their translated frames, start and stop codons are also
+            highlighted. These are highlighted in the direciton they are translated (depending on the strand displayed),
+            and coloured appropriately. Start codons are highlighted in green, and stop codons are highlighted in red.
+        </P>
+    </LI>
+    <LI><B>Display Strand</B>
+        <P>
+            DNA Sequence data can be viewed in Base-By-Base from the perspective of either the top strand or the bottom,
+            or complement, strand. The sequence is not reversed, however, so genes displayed on the bottom strand are
+            displayed as translated from right to left. To change the strand displayed, click the button on the toolbar
+            labelled either 'Top' or 'Bottom'. The label on the button indicates the current strand displayed and
+            clicking the button toggles the display from one to the other.</P></LI>
+    <LI><B>Gene/ORF Data</B>
+        <P>
+            Base-By-Base can import gene feature data from a VOCs database. For more information on the VOCs database,
+            see the <A HREF="https://4virology.net/tools/VOCS">VOCs</A> homepage. Genes are downloaded and ORFs
+            displayed in BBB within the appropriate frames in the 3 frame translation. If viewing the top strand, genes
+            are displayed in red. When appropriate, genes on the bottom strand are displayed in blue. As with the 3
+            frame translation, genes are appropriately spaced out to make allowances for gaps in the alignment.
+        </P>
+        <P>
+            To move to a particular gene, simply select it in the genes pulldown menu in the toolbar. The genes
+            displayed in this pulldown are only those genes within the current display area and on the current display
+            strand.
+        </P>
+        <P>
+            To get more information on the alignment of a gene against another sequence, simply double click on that
+            gene on the display. The following information is then calculated and displayed:
+        </P>
+        <TABLE BORDER="0">
+            <TR>
+                <TD>
+                    <UL>
+                        <LI>Gene Name</LI>
+                        <LI>Strand</LI>
+                        <LI>ORF Start</LI>
+                        <LI>ORF Stop</LI>
+                        <LI>Length</LI>
+                        <LI>Aligned Length</LI>
+                        <LI>Differences</LI>
+                        <LI>Percentage Difference</LI>
+                        <LI>Substitutions (with breakdown)</LI>
+                    </UL>
+                </TD>
+                <TD>
+                    <UL>
+                        <LI>Insertions (with breakdown)</LI>
+                        <LI>Deletiongs (with breakdown)</LI>
+                        <LI>Upstream Differences</LI>
+                        <LI>Amino Acid Changes</LI>
+                        <LI>Silent Codon Changes</LI>
+                        <LI>Additional Stop Codons</LI>
+                        <LI>Counterpart Gene (Where Applicable)</LI>
+                        <LI>Counterpart Gene Length</LI>
+                        <LI>Difference in Length with Counterpart</LI>
+                    </UL>
+                </TD>
+            </TR>
+        </TABLE>
+        <P>
+            This essentially amounts to one row in the CDS Statistics report. More information on this is available <A
+                HREF="../reports/index.html#CDS">Here</A>. Additionally, left-clicking on a gene selects the region of
+            sequence that it covers (in the selected sequences).
+        </P></LI>
+    <LI><B>User Comments</B>
+        <P>
+            Any region of sequence may be annotated with a user comment. This user comment has four distinct properties
+            which are stored when the current file is saved. These are the text of the comment, the position on the
+            sequence, the direction (strand) in which the comment exists, and the colors to display.
+        </P>
+        <P>
+            To create a comment, select a region of sequence and select the 'Add Comment...' entry in the <B>Tools</B>
+            menu. Enter the comment, select display colors and click 'Ok'. The comment will be displayed in the 'User
+            Events' channel and be represented by an arrow pointing in the direction translation occurs in the currently
+            displayed strand. To remove a comment, click on it and select 'Remove Comment' from the
+            <B>Tools</B> menu.
+        </P>
+        <P>
+            To edit a prexisting comment, simply double click on it and the same window used to create the comment will
+            be displayed to edit it. Single clicking on a comment will select the region of sequence in which it is
+            relevant.
+        </P></LI>
+    <LI><B>Mouse Hover / Tooltip</B>
+        <P>
+            Base-By-Base updates the tooltip for the display area in real time. If the mouse is left to hover a portion
+            of the display area, any pertinent information will be displayed in a tooltip for the mouse pointer. The
+            sequence position and position within the alignment is always shown. If the pointer is over a gene, the gene
+            name will be displayed. If the pointer is over a user comment, the comment will be displayed.
+        </P></LI>
+    <LI><B>Sequence Scale vs Alignment Scale</B>
+        <P>
+            Two distinct scales are displayed in Base-By-Base. These are the sequence positional scale and the alignment
+            positional scale. The sequence scale indicates the position along the sequence ignoring gaps. This means the
+            scale is spaced out for gaps and is not displayed uniformly across the entire sequence. The alignment scale
+            displays positions that include the gaps. This is more of a 'global' scale and is the same for each sequence
+            in the display. It is more of a marker for the entire display than the sequence scale is.
+        </P></LI>
+</OL>
+</PRE>
+</BODY>
+</HTML>

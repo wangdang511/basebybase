@@ -1,0 +1,33 @@
+<HTML>
+<HEAD><TITLE>BBB - Display Area</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<FONT SIZE="+3">Base-by-Base Help</FONT><BR>
+<FONT SIZE="+2">Display Area</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<H3>Display Area</H3>
+<H4>General</H4>
+<P>Base-By-Base provides the ability to narrow down the field of view within an alignment. If an alignment is too large,
+    or the region of interest for a particular alignment is much smaller than the entire file, users can limit the
+    amount of data displayed and processed in reports.</P>
+<P>To set the display area for the current view, click the 'Set Display Area' button on the <A
+        HREF="../toolbar/index.html">Base-By-Base Toolbar</A>. This will bring up the following window:</P>
+<IMG SRC="../images/disp-area-window.png"><BR>
+<P>Enabling the 'Endpoint' checkbox means that the view will extend to or from the end of the alignment in that
+    direction. To set the display area to encompass a limited region within the view, not including either end, uncheck
+    the 'Endpoint' box for both the left and right side and enter values in for each boundary.</P>
+
+<H4>Side Effects</H4>
+<P>The main side effect of setting the display area is that the scroll bar will now only scroll around within the
+    display area. Below is a list of other side effects of changing the display area:</P>
+<UL>
+    <LI>CDS Statistics report and Event Breakdown now only take into account events/features which fall between the
+        bounds of the display area.
+    </LI>
+    <LI>Searching for the next and last difference or the next and last comment will now only search for those which
+        exist within the bounds of the display area.
+    </LI>
+    <LI>The gene pulldown list will only make available genes within the bounds of the display area.</LI>
+</UL>
+</BODY>
+</HTML>

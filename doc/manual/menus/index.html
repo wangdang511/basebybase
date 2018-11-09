@@ -1,0 +1,430 @@
+<HTML>
+<HEAD><TITLE>BBB - Menus</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<A NAME="TOP"/>
+<FONT SIZE="+3">Base-by-Base Help</FONT><BR>
+<FONT SIZE="+2">Menus</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<H2>Base-By-Base Menu Help</H2>
+<UL>
+    <LI><A HREF="#FILE">File Menu</A></LI>
+    <LI><A HREF="#EDIT">Edit Menu</A></LI>
+    <LI><A HREF="#VIEW">View Menu</A></LI>
+    <LI><A HREF="#NAVIGATE">Navigate Menu</A></LI>
+    <LI><A HREF="#REPORTS">Reports Menu</A></LI>
+    <LI><A HREF="#TOOLS">Tools Menu</A></LI>
+</UL>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="FILE"/>
+<H3>File</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">New Alignment</TD>
+        <TD>Opens a new alignment window with no sequences loaded. From here you can either add sequences to the
+            alignment from a file or database or load an existing alignment from a file.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Add Sequences to Alignment</TD>
+        <TD>Adds a sequence to the end of the open alignment. Sequence data can come from one of three sources:
+            <UL>
+                <LI><B>Local File</B> - All of the sequences contained in a file stored on your local computer will be
+                    added to the alignment. The file can be FASTA, ClustalW or BBB formatted. BBB files can contain gene
+                    feature information, which will be added with the sequence if it is present. For more information on
+                    files, see the section on <A HREF="../topics/files.html">File Types</A></LI>
+                <LI><B>VOCs Database</B> - Adds one or more sequences from the currently selected VOCs database. You can
+                    chose the current database from the <A HREF="#TOOLS">Tools Menu</A>. If the VOCs database stores
+                    gene feature data for the selected sequences, it will be added.
+                </LI>
+                <LI><B>Website</B> - We have included a number of premade alignments which can be accessed at the end of
+                    the append sequences menu. These are BBB formatted files which are stored on our server.
+                </LI>
+            </UL>
+            Once sequences are appended you can change their ordering using the <a href="../toolbar/index.html">Sequence
+                List Toolbar</a>.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Open Alignment</TD>
+        <TD>Opens an existing alignment. If you have anything in the current alignment it will be closed before the new
+            alignment is opened. Alignment data can come from one of two sources:
+            <UL>
+                <LI><B>Local File</B> - The file can be FASTA, ClustalW or BBB formatted. BBB files can contain gene
+                    feature information, which will be added with the sequence if it is present. For more information on
+                    files, see the section on <A HREF="../topics/files.html">File Types</A></LI>
+                <LI><B>Website</B> - These are BBB formatted files which are stored on our server.</LI>
+            </UL>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Remove Sequences</TD>
+        <TD>Removes the sequences that are currently selected from the alignment. You can select sequences by clicking
+            on the sequence name on the left hand side of the main display.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Save</TD>
+        <TD>Saves the current alignment to a file. If you are saving a new alignment, you will be prompted to enter a
+            location and filename to store it. For more information on files, see the section on <A
+                    HREF="../topics/files.html">File Types</A>.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Save As...</TD>
+        <TD>Saves the current alignment to a file. You will be prompted to enter a location and filename to store the
+            alignment.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Export Selection (Selected Sequences)</TD>
+        <TD>Saves the selected portion of the selected sequences to an alignment file. If no sequence data is selected
+            or no sequences are indicated (selected in the header list), then a warning message will be displayed.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Export Selection (All Sequences)</TD>
+        <TD>Saves the selected portion of all sequences to an alignment file. If no sequence data is selected, an error
+            message will be displayed
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Export Alignment Image...</TD>
+        <TD>Saves a portion of the alignment as an image to be viewed later. The image width, spacing are selected by
+            the user, and the image can be either PNG or JPG formats.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Delete Gap Columns and Export</TD>
+        <TD>Saves a new alignment file that contains all sequences in the current alignment with columns containing only
+            gaps deleted. <B>WARNING: This can cause real sequence data to be deleted</B>.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Close Alignment</TD>
+        <TD>Closes the current alignment. If you have not saved the alignment you will be asked if you would like to
+            before you continue. A blank alignment window will be displayed after the previous alignment has been
+            closed.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Quit</TD>
+        <TD>Exits Base-By-Base. If you have not saved the current alignment you will be asked if you would like to
+            before you quit.
+        </TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="EDIT"/>
+<H3>Edit</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Undo</TD>
+        <TD>Undoes the last gap insertion or deletion made when clicking and dragging the mouse while in 'Edit Mode'.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Redo</TD>
+        <TD>Redoes the last undone insert or delete.</TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Mark All Sequences</TD>
+        <TD>Marks all sequences in the alignment. Many functions in base by base can be applied to a subset of the
+            sequences in the alignment, This is the same as clicking on all names in the header list.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Unmark All Sequences</TD>
+        <TD>Unmarks all sequences in the alignment.</TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Select Whole Sequence</TD>
+        <TD>Selects the entirety of all of the marked sequences. If the sequences are of varying length you will be
+            asked if you would like to normalize them by padding the end with gaps before continuing.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Select Region</TD>
+        <TD>Selects a subsequence of all marked sequences. The user will be prompted to enter beginning and ending
+            sequence numbers for the selection select. Useful if you have to select large regions of a sequencesequence.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Insert Gaps</TD>
+        <TD>Inserts gaps into all marked sequences at the currently selected position.</TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Remove Gaps</TD>
+        <TD>Removes gaps from all marked sequences in the current sequence selection.</TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Preferences</TD>
+        <TD>Allows the user to edit his or her user settings for display and warnings.</TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="VIEW"/>
+<H3>View</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Comparison Method</TD>
+        <TD>Sets how the difference row in the main display is calculated. In "Pairwise Comparison" mode the row shows
+            the differences between the two adjacent sequences. In the "Against Consensus" mode, the sequences are
+            compared to the predominant nucleotide or amino acid at that position.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Set Display Area</TD>
+        <TD>Allows the user to limit the area displayed in the main alignment window. This allows you to cut an
+            arbitrary portion of the left and/or right end of the alignment from the display. The alignment itself
+            remains unchanged, only the view that the user has on it. For more information see the <A
+                    HREF="../topics/disp-area.html">Display Area</A> and what it means to reports.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Show/Hide Sequences</TD>
+        <TD>Allows the user to set whether each sequence should appear in the display. Unchecked sequences will remain
+            in the alignment but will not be shown in the display window. You can display the sequences again by by
+            checking them.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Color Scheme</TD>
+        <TD>Allows the user to select the scheme which will be used to colour sequence data. These include the default
+            character-identity based scheme where each character is assigned a predefined colour, and a simple percent
+            identity style which uses shades to indicate the frequency of each nucleotide or amino acid at each position
+            in the alignment. Protein sequence alignments may also be viewed with similarity-matrix based (BLOSUM62 or
+            PAM250) shading for which residues "similar" to the most frequently occurring amino acid are also colored. A
+            hydrophobicity coloring scheme which shades amino acids based on the hydrophobicity score of each residue is
+            also available .
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Consensus</TD>
+        <TD>Displayes a consensus sequence generated from all sequences displayed in the alignment. Currently provides a
+            display based on percentage identity, however more consensus calculations can be added.
+        </TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="NAVIGATE"/>
+<H3>Navigate</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Go To Location</TD>
+        <TD>Prompts the user to select a position, position type and sequence. The type will set whether the location is
+            in relation to the just the sequence ("Absolute Postion") or to the gapped out alignment ("Gapped
+            Position"). Base-By-Base will scroll the window to the specified position on the given sequence.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Skip Left/Right 1kb/10kb</TD>
+        <TD>Shifts the display left or right 1,000 or 10,000 base positions in the alignment.</TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Go to Last/Next Comment</TD>
+        <TD>Scrolls the display to the first comment to the left (for "Last") or right (for "Next") of the screen. If
+            there are no comments, the display will not be moved.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Go to Last/Next Gene</TD>
+        <TD>Scrolls the window to the first gene to the left (for "Last") or right (for "Next") of the screen. If there
+            are no genes, the display will not be moved.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Go to Last/Next Difference</TD>
+        <TD>Scrolls the window to the first difference to the left (for "Last") or right (for "Next") of the screen. If
+            there are no differneces, the display will not be moved.
+        </TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="REPORTS"/>
+<H3>Reports</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Neighbor Joining Tree</TD>
+        <TD>Uses the PAL library to construct a neighbor joining tree from all sequences in the alignment.</TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Clustering Tree</TD>
+        <TD>Uses the PAL library to construct clustering trees from all sequences in the alignment. The types of
+            clustering trees available are: Complete Linkage, Single Linkage, UPGMA Tree and WPGMA Tree.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">View CDS Statistics</TD>
+        <TD>Displays the CDS Statistics window which provides an analysis of the difference between genes on two
+            sequences. The differences between the genes of one sequence and the corresponding area on the other
+            sequence are logged. For more information on the CDS Statistics, see the section on the <A
+                    HREF="reports/index.html#CDS">CDS Statistics Window</A></TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">View Event Breakddown</TD>
+        <TD>Displays a breakdown of events that occur in the CDS Statistics window and events that occur in any user
+            added comments. For more information, see the <A HREF="reports/index.html#EBD">Event Breakdown Window</A>
+            section.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Pairwise Alignment</TD>
+        <TD>Opens a new text window containing a pairwise alignment of all marked sequences in the order they appear in
+            the alignment.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Consensus Report</TD>
+        <TD>Opens a new window containing the consensus sequence for the alignment. If there is no consensus at a
+            position an N is inserted in its position. This sequence can be exported to a fasta file.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Visual Summary</TD>
+        <TD>Displays a visual overview of the alignment, with different colouring schemes showing the relation of the
+            sequences to the consensus of the alignment. For more information, see the <A HREF="reports/index.html#VOS">Visual
+                Summary Window</A> section.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Alignment Info</TD>
+        <TD>
+            <P>The percent identity is calculated using the following formula:<br>
+                ID% = 100-[(M*100)/(AL-TG)], where<br>
+                M - total number of mismatches<br>
+                AL - the length of the alignment, or position of the last aligned residue<br>
+                TG - total number of gaps in the alignment<br>
+                So we are calculating the percent of the mismatched residues of the total
+                number of aligned residues. Subtracting the result from a hundred will give
+                us percent identity. This is the same as calculating the %identity over
+                only positions where there are aa in each sequence.<br>
+                For example: Below are two aligned sequences of 105 amino acids each. There
+                are three mismatched residues and two gaps (5 bases each, or 10 total). The
+                total length of the alignment is 110.
+            </P>
+            <IMG width="433" height="127" src="../images/menus_alignment_info1.png">
+            <P>Plugging all the numbers in to the equation above: ID%=100-[(3*100)/(110-10) = 97%</P>
+            <IMG width="433" height="109" src="../images/menus_alignment_info2.png">
+            <P>If you have a long alignment and you need to calculate the total number of
+                gaps, you'll first need to figure out how many gaps are there in every
+                sequence and sum them up. You can do that by simply subtracting the last
+                aligned position from the last sequence position. In the example above the
+                last aligned position is 110 and the sequence position for the first and
+                second protein is 105. So the gap size in first the sequence (110-105) is 5
+                and the gap size in the second sequence is also 5 or 10 total paged positions
+                in the alignment.
+            </P>
+        </TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="TOOLS"/>
+<H3>Tools</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Fuzzy Motif Search</TD>
+        <TD>Opens the Fuzzy Motif Search window, which allows you to do fuzzy searching by specifying a sequence to
+            search for, and a number of allowed mismatches. For more information on the Fuzzy Motif Searching available
+            from Base-by-Base, see the <A HREF="../topics/fuzzy-motif.html">Fuzzy Nucleotide Motif Searching</A> section
+            of the manual.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Reg. Expression Search</TD>
+        <TD>Opens the Regular Expression search window, which allows you to search all sequences in the alignment for a
+            match using the powerful Regular Expression grammar. For more information on Regular Expressions see the <A
+                    HREF="http://www.regular-expressions.info/tutorial.html">regular expression tutorial</a>. Note that
+            Base-By-Base uses Perl 5 regular expressions, with case insensitive searching.</A></TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Export Differences to VGO</TD>
+        <TD>Exports the pairwise differences between two sequences of the alignment to a file that can be imported as an
+            analysis into the <A HREF="https://4virology.net/tools/VGO">Viral Genome Organizer</A>. The file contains
+            the locations of differences in one genome with respect to those in another, and stores them in relation to
+            the sequence positions, not the alignment. This allows VGO to import the sequence positions irrespective of
+            the alignment.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Add Comment</TD>
+        <TD>Add a comment to the currently selected region of the first marked sequence. A window will be opened
+            promptimg the user to enter a comment and select foreground and background colours. Comments are associated
+            with the strand they were added to.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Remove Comment</TD>
+        <TD>Removes the comment currently selected by the user. If there is no comment currently selected, a message
+            will show to prompt the user to select one.
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Align Selection</TD>
+        <TD>Takes the selected region of all marked sequences and brings up an alignment window. If the user chooses to
+            use an external alignment program, the sequence will be sent to that program before the alignment window is
+            brought up. The user can then change the alignment manually, and reinsert it back into the main alignment.
+            <B>Note:</B> If an alignment is done that does not include all seuqences in the alignment and the sequences
+            are returned at different lengths, this could cause problems with how the newly aligned sequences are
+            reintegrated into the main alignment</B>.
+            <BR><BR>Below are methods available to use to align sequence regions in Base by Base.
+            <UL>
+                <LI><B>Manually</B> - Sends the selected region of sequence data into the alignment window unchanged.
+                    The user can then align it by hand outside of the context of the main alignment.
+                </LI>
+                <LI><B>ClustalW</B> - Sends the selected region of sequence data to ClustalW for alignment, using no
+                    command line options. <B>Note: This currently requires access to a VOCs database.</B></LI>
+                <LI><B>t_coffee</B> - Sends the selected region of sequence data to t_coffee for alignment. <B>Note:
+                    This currently requires access to a VOCs database.</B></LI>
+            </UL>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Import Genes</TD>
+        <TD>Allows the user to add gene feature data from a datasource to sequences currently in the alignment. This
+            data is required for items such as the CDS Report.
+            <BR><BR>Base-By-Base currently imports gene feature data from two sources:
+            <UL>
+                <LI><B>From VOCs Database</B> - Base-By-Base will attempt to match each sequence in the alignment with a
+                    sequence in the VOCs database currently being accessed (check the VOCs Db Connection item in the
+                    Tools menu). You will then be given the option to select corresponding sequences for each sequence
+                    in the alignment, before gene data is downloaded and added to the alignment. <B>Note: In order for
+                        the gene data to make any sense, the sequences must be aligned from position 1, and contain all
+                        sequence data for the entire genome.</B></LI>
+                <LI><B>From Feature File</B> - Currently Base-By-Base only imports gene feature data from GenBank files.
+                    Base-By-Base will prompt you to chose a file, and enter a gene prefix, which will be added to each
+                    gene name before the data is added to the alignment. Genes imported in this manner will be attached
+                    to the first marked sequence.
+                </LI>
+            </UL>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">VOCs Db Connection</TD>
+        <TD>Allows the user to choose a VOCs database to connect to. For more information on VOCs database connections
+            please read the <A HREF="customization/index.html#DB">Customization Section</A>. This item also lets you
+            view database information for available VOCs databases.
+        </TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="HELP"/>
+<H3>Help</H3>
+<A HREF="#TOP">Back to Top</A>
+<TABLE BORDER="1">
+    <TR>
+        <TD WIDTH="20%" VALIGN="TOP">Online Manual</TD>
+        <TD>Opens a browser window pointing to the online manual (this document).</TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A HREF="../index.html">
+    <IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+</BODY>
+</HTML>

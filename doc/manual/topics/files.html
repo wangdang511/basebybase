@@ -1,0 +1,93 @@
+<HTML>
+<HEAD><TITLE>BBB - File Types</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<FONT SIZE="+3">Base-By-Base Help</FONT><BR>
+<FONT SIZE="+2">File Types</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<P>Base-By-Base has the ability to read and write in three different file formats. These are:
+    <BR>
+<UL>
+    <LI><A HREF="#BBB">Base-By-Base format</A></LI>
+    <LI><A HREF="#FASTA">Fasta Format</A></LI>
+    <LI><A HREF="#CLUSTAL">Clustal .aln Format</A></LI>
+</UL>
+</P>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="BBB"/>
+<H4>Base-By-Base (.bbb) Format</H4>
+<P>The BBB file format is a subset of the Bioinformatics Sequence Markup Language (BSML). The latest information and
+    references on this format can be found at the <A HREF="http://www.bsml.org" target="_new">BSML.org Website</A>. BSML
+    (and therefore the BBB Format) is a specification built in XML. The DTD for the BSML format is available from
+    bsml.org. Base-By-Base files, however, follow a much simpler structure. Below is an example listing containing two
+    sequences with feature data included. The sequence data provided is incomplete to save space.</P>
+<P>In order to make things easier, we suggest that users align their files, saving them as Fasta or Clustal files and
+    load them into Base-By-Base. Base-By-Base can then save a BBB format file for later annotation.</P>
+<PRE>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Bsml&gt;
+  &lt;Definitions&gt;
+    &lt;Sequences&gt;
+      &lt;Sequence
+        comment="Sequence Data Contained in &apos;Multiple-alignment&apos; section"
+        id="SEQ-ID:7" length="186103" molecule="dna" title="Variola major virus (Bangladesh-1975)"&gt;
+        &lt;Feature-tables&gt;
+          &lt;Feature-table title="GENE"&gt;
+            &lt;Feature class="GENE" title="VAR-B-D1L"&gt;
+              &lt;Interval-loc complement="1" endpos="993" startpos="718"/&gt;
+              &lt;Resource id="GENE-ID:1396"/&gt;
+            &lt;/Feature&gt;
+            &lt;Feature class="GENE" title="VAR-B-D2L"&gt;
+              &lt;Interval-loc complement="1" endpos="1486" startpos="1055"/&gt;
+              &lt;Resource id="GENE-ID:1395"/&gt;
+            &lt;/Feature&gt;
+            &lt;!-- etc --&gt;
+          &lt;/Feature-table&gt;
+          &lt;Feature-table title="COMMENT"&gt;
+            &lt;Feature class="COMMENT" comment="fdsafdsa|6666ff|ccffcc" title="COMMENT_TEXT"&gt;
+              &lt;Interval-loc complement="0" endpos="35" startpos="16"/&gt;
+            &lt;/Feature&gt;
+          &lt;/Feature-table&gt;
+        &lt;/Feature-tables&gt;
+      &lt;Sequence
+        comment="Sequence Data Contained in &apos;Multiple-alignment&apos; section"
+        id="SEQ-ID:9" length="185578" molecule="dna" title="Variola virus (India 3 Major, 1967)"&gt;
+        &lt;Feature-tables&gt;
+          &lt;Feature-table title="GENE"&gt;
+            &lt;Feature class="GENE" title="VAR-I-D1L"&gt;
+              &lt;Interval-loc complement="1" endpos="799" startpos="338"/&gt;
+              &lt;Resource id="GENE-ID:1751"/&gt;
+            &lt;/Feature&gt;
+            &lt;Feature class="GENE" title="VAR-I-D2L"&gt;
+              &lt;Interval-loc complement="0" endpos="2232" startpos="1810"/&gt;
+              &lt;Resource id="GENE-ID:1750"/&gt;
+            &lt;/Feature&gt;
+            &lt;!-- etc --&gt;
+          &lt;/Feature-table&gt;
+        &lt;/Feature-tables&gt;
+      &lt;/Sequence&gt;
+    &lt;/Sequences&gt;
+    &lt;Tables&gt;
+      &lt;Multiple-alignment-table molecule-type="nucleotide"&gt;
+        &lt;Sequence-alignment sequences="2"&gt;
+          &lt;Sequence-data seq-name="Variola major virus (Bangladesh-1975)"&gt;TAGTTAGATAAATTAATAATACATAAGTTTTAATACATTAATATTATATTATACTATTTTATTTAGTGTCTAGAAAAAAATGTGTGACCCACGACTGTAGGAAACTCTAGAGGGTAAAAAAATCAATCGCTTTATAGAGACCATCAGAAAGAGGTTTAATATTTTTGTGAGACCATCGAAGAGAGAAAGAGATAAAACTTTTTACGACTCCATCAGAAAGAGGTTTAATATTTTTGTGAGACCATCGAAGAGAGAAAGAGATAAAACTTTTTACGACTCCATCAGAA...&lt;/Sequence-data&gt;
+          &lt;Sequence-data seq-name="Variola virus (India 3 Major, 1967)"&gt;-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------...&lt;/Sequence-data&gt;
+          &lt;Alignment-consensus/&gt;
+        &lt;/Sequence-alignment&gt;
+      &lt;/Multiple-alignment-table&gt;
+    &lt;/Tables&gt;
+  &lt;/Definitions&gt;
+&lt;/Bsml&gt;
+</PRE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="FASTA"/>
+<H4>Fasta (.fasta) Format</H4>
+<P>BBB is capable of reading standard Fasta files. These MUST start with a header line initiated by a '&gt;' character
+    and followed by some header text. All data after that until the next '&gt;' initiated line will be read as sequence
+    text. This process is then repeated for all sequences in the file.
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="CLUSTAL"/>
+<H4>Clustal (.aln) Format</H4>
+<P>BBB accepts files created by Clustal (and other programs using the .aln file format).</P>
+</BODY>
+</HTML>

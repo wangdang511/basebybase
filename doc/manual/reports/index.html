@@ -1,0 +1,97 @@
+<HTML>
+<HEAD><TITLE>BBB - Reporting</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<FONT SIZE="+3">Base-by-Base Help</FONT><BR>
+<FONT SIZE="+2">Reporting</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<H2>Base-By-Base Reports Help</H2>
+<UL>
+    <LI><A HREF="#CDS" TARGET="main">CDS/Gene Statistics</A></LI>
+    <LI><A HREF="#EBD" TARGET="main">Event Breakdown</A></LI>
+    <LI><A HREF="#VOS" TARGET="main">Visual Summary, </A></LI>
+</UL>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="CDS"/>
+<H3>CDS/Gene Statistics Report</H3>
+<P>Base-By-Base provides a statistical report on all of the genes in one genome compared to those in another. To get
+    this report, mark two sequences (via the header list) and select the 'View CDS Statistics' entry in the Reports
+    menu. A message will prompt users to mark sequences if none are marked.<BR><BR>
+    The report details a comparison of genes on the first genome with two properties of the second, genes and the
+    sequence along the same region as the genes of the first. Base-By-Base makes a mapping of counterpart genes on the
+    second genome by determining the greatest portion of overlap in the alignment. If the sequences are not propertly
+    aligned, the results of this mapping may not be accurate.<BR><BR>
+    The following information is provided for each gene in the report:
+<TABLE BORDER="0">
+    <TR>
+        <TD>
+            <UL>
+                <LI>Gene Name</LI>
+                <LI>Strand</LI>
+                <LI>ORF Start</LI>
+                <LI>ORF Stop</LI>
+                <LI>Length</LI>
+                <LI>Aligned Length</LI>
+                <LI>Differences</LI>
+                <LI>Percentage Difference</LI>
+                <LI>Substitutions (with breakdown)</LI>
+            </UL>
+        </TD>
+        <TD>
+            <UL>
+                <LI>Insertions (with breakdown)</LI>
+                <LI>Deletiongs (with breakdown)</LI>
+                <LI>Upstream Differences</LI>
+                <LI>Amino Acid Changes</LI>
+                <LI>Silent Codon Changes</LI>
+                <LI>Counterpart Gene (where applicable)</LI>
+                <LI>Counterpart Gene Length</LI>
+                <LI>Difference in Length with Counterpart</LI>
+            </UL>
+        </TD>
+    </TR>
+</TABLE>
+This data is presented in a table in the 'CDS Event Statistics' window. The table may be exported to an HTML file either
+whole or in part using the 'Save All' or 'Save Selected' entries in the file menu.<BR><BR>
+The table can be sorted by any of the columns in either ascending and descending order by by clicking the column
+headers.
+</P>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="EBD"/>
+<H3>Event Breakdown</H3>
+<P>The Event Breakdown report is structured as a hierarchical tree, and is designed for easy navigation of the genome to
+    find specific difference information for particularly interesting regions of a pair of genomes.<BR><BR>
+    This report provides a breakdown of the differences between genes on one sequence and the corresponding regions in
+    another. The breakdown includes the number of and type of substitutions, the number of deletions, and the number and
+    type of amino acid changes. In addition to this, a breakdown of events occuring within the regions commented on by
+    users is also available. This compares comments on both sequences.
+</P>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A NAME="VOS"/>
+<H3>Visual Overview Summary</H3>
+<P>
+    <IMG SRC="../images/visual-overview.jpg">
+</P>
+<P>The Visual Overview Summary displays an overview of the differences between each sequence in the current alignment
+    and the consnesus sequence of the alignment. It is designed to quickly show a colour coded overview of the full
+    genome sequence alignment and allows you to quickly identify areas of interest on the genome to view in the main
+    alignment window.
+</P>
+<P>When edits are made to the sequences in the alignment, this window refreshes the consensus and displays the new
+    comparison. Changes are polled about once per second, so edits will not show up instantly when they are made.
+</P>
+<P>There are currently four colour schemes available in the visual summary overview. The 'Difference' colour scheme is
+    identical to the 'Differences' row of the main display when in 'Against Consensus' comparison mode. Base changes (or
+    regions of substitutions) are displayed as blue ticks, while insertions and deletions are displayed in green and red
+    respectively. The 'Raw Conservation' colour scheme will colour regions of the genome based on how similar each
+    character is to the consensus sequence. There are also 'Scored Similarity' colour schemes for both PAM250 and
+    BLOSUM62 matrixes when comparing sequences of amino acids.
+</P>
+<p>Note that the ordering of sequences in this window is <B>NOT</B> automatically updated when the ordering of sequences
+    in the main window changes. If you would like to see an up to date view of the sequences in the main window, click
+    the <b>Refresh Sequences</b> button and the display will update.
+</P>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+</BODY>
+</HTML>

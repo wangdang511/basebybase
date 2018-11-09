@@ -1,0 +1,8 @@
+.DS_Store
+*.xml
+!.DiffEditor
+*.jar
+*.class
+/target
+tempin.bbb
+tempout.bbb

@@ -1,0 +1,135 @@
+<HTML>
+<HEAD><TITLE>BBB - Customizing Base-By-Base</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<FONT SIZE="+3">Base-By-Base Help</FONT><BR>
+<FONT SIZE="+2">Customizing Base-By-Base</FONT><BR>
+<A HREF="../index.html"> <IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<H2>Customizing Base-By-Base Behavior</H2>
+<UL>
+    <LI><A HREF="#PREFS">Preferences</A></LI>
+    <LI><A HREF="#DB">VOCs Db Connection</A></LI>
+</UL>
+<HR WIDTH="50%" ALIGN="LEFT">
+<P>
+    <A NAME="PREFS"/>
+    <FONT SIZE="+2">Preferences</FONT><BR>
+    Base-By-Base allows users to customize how the application will
+    display alignmed sequences, as well as how it will behave under
+    certain conditions. Below is a list of preferences that are
+    available to the user from within Base-By-Base via the
+    'Preferences' option in the Edit menu. Configuration information
+    is stored in a file called bbbase.config which is created in
+    the .bbb directory in the users home directory.
+</P>
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="10">
+    <TR>
+        <TD HEIGHT="30%">Frame X: AA Translation (with genes)</TD>
+        <TD>(true,false) When set to true, Base-By-Base will display
+            a translation of each sequence in the alignment for the given frame.
+            If gene features have been loaded into BBB, these will also
+            be displayed in the appropriate frame.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Hilight Start/Stop Codons with Arrows</TD>
+        <TD>(true,false) If this value is set to true (Checked on), then
+            start and stop codons will be indicated in the three frame
+            translation of sequences. Start codons will be indicated by
+            a green arrow over the amino acid and stop codons will be
+            indicated by a red arrow.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Show AA Arows('===&gt;')</TD>
+        <TD>(true,false) When set to on, BBB will insert arrows between
+            the amino acid labels in the three frame translation. This
+            gives the indication for where each amino acid is coded in
+            case there are large gaps. For more information on the
+            three frame translation see the Display section of the help
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Show events and differences</TD>
+        <TD>(true, false) When set to true, BBB will display a row of
+            difference indications between each sequence.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Show gapped position scale</TD>
+        <TD>(true, false) This shows or hides the gapped position scale.
+            This the scale of positions in relation to the alignment, not
+            any particular sequence.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Show sequence position scale</TD>
+        <TD>(true, false) This shows or hids the sequence position scale.
+            This is the scale of sequence positions for each sequence. This
+            scale will be different for each sequence containing different
+            numbers of bases and gaps.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Show user comments/annotations</TD>
+        <TD>(true, false) This allows users to display or hide comments
+            that may have been added to sequences in the alignment.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Propogate edits to selected sequences</TD>
+        <TD>(true, false) This setting indicates whether or not an edit action
+            maee on one sequence should be run on each (and only) selected
+            sequence in the list.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Propogate selections to selected sequences</TD>
+        <TD>(true, false) This setting indicates whether or not a select action
+            maee on one sequence should be run on each (and only) selected
+            sequence in the list.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Warn when substituting aligned sequence</TD>
+        <TD>(true, false) If set to false, users will not be warned of the
+            possible consequences of inserting manually aligned sequence
+            segments back into the main alignment.
+        </TD>
+    </TR>
+    <TR>
+        <TD HEIGHT="30%">Warn when exiting application</TD>
+        <TD>(true, false) When set to false, users will no be asked if they
+            are sure they would like to quit Base-By-Base
+        </TD>
+    </TR>
+</TABLE>
+<HR WIDTH="50%" ALIGN="LEFT">
+<P>
+    <A NAME="DB"/>
+    <FONT SIZE="+2">VOCs Db Connection</FONT><BR>
+    <IMG SRC="https://4virology.net/files/vocs-webstart.png"/>
+    <BR>
+    Base-By-Base allows users to connect to any Viral Orthologous Clusters
+    database they wish to import gene data and make alignment requests.
+    The Viral Orthologous Clusters (Also known as Poxvirus Orthologous
+    Clusters) homepage is at <A HREF="https://4virology.net/tools/VOCS">https://4virology.net/tools/VOCS</A>.
+    <BR><BR>
+    Each database connection has
+    5 different properties that must be known: the DB name, the user, the
+    password, the host and port of the VOCs server. These properties are
+    stored in a file in the .bbb/db-POCS directory in each users home
+    directory. There may be as many files in this directory as you wish,
+    each with different connection properties. An example file is
+    avaliable <A HREF="pbr.properties.txt">HERE</A>. Simply modify this file to connect
+    to the appropriate database and drop this into the .bbb/db-POCS
+    directory in your home directory.<BR><BR>
+    Provided with BBB are sample connections to our main databases. These
+    are the database for the
+    <A HREF="http://www.poxvirus.org">Poxvirus Bioinformatics Resource</A>, and the
+    <A HREF="https://4virology.net/organisms/Coronaviridae">database for the SARS Bioinformatics Suite</A>.
+</P>
+<HR WIDTH="50%" ALIGN="LEFT">
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+</BODY>
+</HTML>

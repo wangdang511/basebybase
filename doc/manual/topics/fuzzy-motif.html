@@ -1,0 +1,46 @@
+<HTML>
+<HEAD><TITLE>BBB - Fuzzy Motif Search</TITLE></HEAD>
+<BODY BGCOLOR="white">
+<FONT SIZE="+3">Base-By-Base Help</FONT><BR>
+<FONT SIZE="+2">Fuzzy Nucleotide Motif Search</FONT><BR>
+<A HREF="../index.html"><IMG SRC="../images/toolbar/MoveUp.gif" border="0">Back to Main</A>
+<HR WIDTH="50%" ALIGN="LEFT">
+<P>With Base-By-Base, it is possible to search within each sequence for a given motif accounting for ambiguities and
+    missmatches. The Fuzzy Motif Search allows users to enter in an expression pattern (see below for an explanation of
+    the pattern grammar used) as well as a maximum number of mismatches tolerated in a search hit. BBB then searches
+    marked sequences for this motif and displays a list of hits sortable by confidence or by location along the
+    sequence. In addition to the ambiguities created by mismatches, users may enter in IUB ambiguity codes, which are
+    also indicated below.</P>
+<table border="1" cellspacing="0" cellpadding="3" summary="Table of IUPAC Ambiguity Codes">
+        <tr> <th>IUPAC-IUB/GCG Code</th> <th>Meaning</th> <th>Complement</th> </tr>
+        <tr> <th>A</th>   <td>A</td> <td>T</td> </tr>
+        <tr> <th>C</th>   <td>C</td> <td>G</td> </tr>
+        <tr> <th>G</th>   <td>G</td> <td>C</td> </tr>
+        <tr> <th>T/U</th> <td>T</td> <td>A</td> </tr>
+        <tr> <th>M</th>    <td>A or C</td> <td>K</td> </tr>
+        <tr> <th>R</th>    <td>A or G</td> <td>Y</td> </tr>
+        <tr> <th>W</th>    <td>A or T</td> <td>W</td> </tr>
+        <tr> <th>S</th>    <td>C or G</td> <td>S</td> </tr>
+        <tr> <th>Y</th>    <td>C or T</td> <td>R</td> </tr>
+        <tr> <th>K</th>    <td>G or T</td> <td>M</td> </tr>
+        <tr> <th>V</th>    <td>A or C or G</td> <td>B</td> </tr>
+        <tr> <th>H</th>    <td>A or C or T</td> <td>D</td> </tr>
+        <tr> <th>D</th>    <td>A or G or T</td> <td>H</td> </tr>
+        <tr> <th>B</th>    <td>C or G or T</td> <td>V</td> </tr>
+        <tr> <th>X/N</th>  <td>G or A or T or C</td>     <td>X</td> </tr>
+        <tr> <th>.</th>    <td>not G or A or T or C</td> <td>.</td> </tr>
+</table>
+<P>Pattern Grammar: This grammar is similar to that of the program fuzznuc which is included in the EMBOSS suite of
+    bioinformatics software.<BR><BR>
+<UL>
+    <LI>ACT - indicates an A, C, T pattern</LI>
+    <LI>[AC]T - indicates an A or a C followed by a T</LI>
+    <LI>{AC}T - indicates anything BUT an A or a C followed by a T</LI>
+    <LI>ACT(1,3) - indicates an A then C followed by 1, 2 or 3 T's</LI>
+</UL>
+<BR><BR>
+When counting missmatches, [] and {} count as a single match or mismatch. As well, if matching T(2,4) and only 1 T is
+found, this counts as a single mismatch.
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,263 @@
+Base by Base Code Tutorial 
+-or-
+The README wasn't enough
+
+By Ryan Brodie
+August 21, 2003
+Edited By Aijazuddin Syed 
+June 15, 2006
+=========================================
+
+Table of Contents:
+
+1) Dependencies
+2) Pacakges
+3) Important (java) Interfaces
+4) Primary Use Classes
+5) Important Utility Classes
+6) How's that done? (How to find a function)
+7) How-To
+    a) Add a menu item
+    b) Add a toolbar item
+    c) Add a color scheme
+    d) Add a new visual overview model
+    e) Add a user setting
+    f) Fiddle with the searching
+
+=========================================
+
+1) Dependencies:
+    BBB Depends on the following packages to function and compile:
+
+    a) ca.virology.lib.serach.jar (ca.virology.lib in CVS)
+    b) xerces.jar
+    c) jnlp.jar (This is not required if BBB is started from Browser using JWS)
+    d) jakarta-oro-2.x.jar (for the search tools)
+    f) pal-1.4.jar (tree)
+    g) jakarta-regexp-1.2 (biojava req.)
+    h) biojava-1.4.jar
+    i) bytecode-0.92.jar (biojava req)
+    j) ca.virology.lib.appserver (communication with VBRC AppServer)
+    k) ca.virology.lib.DAL (Vocs)
+    l) ca.virology.lib.io (BBB io utilities - file reading and parsing)
+    m) ca.virology.lib.messages (AppServer messages)
+    n) ca.virology.lib.prefs (Preferences for Applications and ExternalApps etc)
+    o) ca.virology.lib.server (AppServer)
+    p) ca.virology.lib.util (UITools and others)
+    q) ca.virology.vocsdbAccess (Vocs)
+    r) xercesImpl 
+    s) xml-apis
+    t) ptolemy2
+
+2) Packages:
+
+ca.virology.baseByBase        - Application level classes go here
+ca.virology.baseByBase.data   - Data structures and helper classes
+ca.virology.baseByBase.sql    - SQL statements
+ca.virology.baseByBase.gui    - User interface classes
+ca.virology.baseByBase.io     - Sequence, file and db IO classes and helper classes
+ca.virology.baseByBase.util   - Utility classes for doing data processing or anything
+                  else that doesn't fit into another category.
+
+3) Important Interfaces:
+
+ca.virology.baseByBase.data.EditableSequence
+    - Base sequence interface (See also FeaturedSequence).  Anything that
+      doesn't need to deal with features such as genes and comments can take
+      this or pass this.
+      
+ca.virology.baseByBase.data.FeaturedSequenceModel
+    - Use this to pass a set of featured sequences to processing tools or
+      gui classes, etc.  Since the FeaturedSequence uses some of the bean
+      property change listeners, you can probably edit the sequences and 
+      not have to worry about manually doing repaints, etc.
+      
+ca.virology.baseByBase.data.Consensus
+    - Consensus sequence interface, used to define how comparisons to consensus
+      will work, or to jus thave a consensus sequence of an alignment.
+    ##Factory## -> ca.virology.baseByBase.data.ConsensusFactory
+      
+ca.virology.baseByBase.data.SequenceSummaryModel
+    - This is used to define the behavior of a summary over a set of sequences.
+    ##Factory## -> ca.virology.baseByBase.data.SummaryModelFactory
+      
+ca.virology.baseByBase.data.ColorScheme
+    - Editor color scheme definition.
+    - no factory for this, currently PrimaryPanel handles the creation of
+      the different ColorScheme objects.  This should probably change.
+    
+ca.virology.baseByBase.data.ScoringMatrix
+    - Currently only used in the summary overview, however this could and 
+      probably should be expanded to anything that needs to do scoring based
+      on a matrix.  (See the color schemes)
+    - See ca.virology.baseByBase.data.AminoAcid, it already creates some of these.
+
+ca.virology.baseByBase.gui.FeatureAction
+    - This is used to define the behavior of clicks on features in the 
+      editor.  This means what happens when the user clicks on a search
+      item or a gene or a comment, etc.
+    ##Factory## -> ca.virology.baseByBase.gui.FeatureActionFactory
+      
+ca.virology.baseByBase.gui.SequenceDisplay
+    - generic definition of how single sequence displays should work. There
+      is a simple, abstract implementation also provided.
+    - EditPanel and SummarySequencePanel are these.
+
+ca.virology.baseByBase.io.FeaturedSequenceReader (Abstract Class)
+    - This is used to get sequence data from some kind of source, be
+      it database or file
+    ##Factory## -> This is a factory itself
+
+ca.virology.baseByBase.io.FeaturedSequenceWriter (Abstract Class)
+    - This is used to send sequences to some sort of datasource, be
+      it file or database
+    ##Factory## -> This is the factory itself
+
+4) Primary Use Classes
+      
+    ca.virology.baseByBase.DiffEditor 
+        - This is the main application class for the complete version of 
+          Base by Base.  Any commandline parameters are interpreted here.
+
+    ca.virology.baseByBase.gui.DiffEditorFrame
+        - This is the main window for BBB.  This contains all the menus
+          and the main toolbar, as well as a pointer to the display of 
+          sequences. Top level actions are defined here.
+         
+    ca.virology.baseByBase.gui.PrimaryPanel
+        - This keeps a list of EditPanel editors which render sequences
+          to the screen.  It handles splitting batched commands among
+          the list of sequences.  This handles mouse listening on the
+          editors, as well as selection of individual sequences for
+          action.
+          
+    ca.virology.baseByBase.gui.EditPanel
+        - This renders a single sequence to the screen
+          
+    ca.virology.baseByBase.data.SimpleEditableSequence/ca.virology.baseByBase.data.FeaturedSequence
+        - This is the main sequence data structure.  This takes requests
+          to insert, delete and retreive characters from the sequence. 
+          the API is similar to but not exactly the same as the 
+          StringBuffer API.
+        - This is currently built on top of a StringBuffer using an 
+          integer array to keep track of gap positions for optimizing
+          retreival of sequence positions.
+
+5) Important Utility Classes
+    
+    ca.virology.baseByBase.util.FeatureTools
+        - This is used to add or remove features of various types 
+          to and from sequences
+          
+    ca.virology.baseByBase.util.SequenceTools
+        - This is used to do broad manipulations to sequences or
+          sets of sequences
+          
+    ca.virology.baseByBase.util.Settings
+        - This is the user settings class.  Define the semantics
+          of a new setting here (what the possible choices are, etc.)
+          
+    ca.virology.baseByBase.io.BioJavaIOTools
+        - This is used to load biojava sequences from files and
+          convert them into BBB Sequences.  Currently this only 
+          works with GENBANK files!
+          
+    ca.virology.baseByBase.io.WebFileParser
+        - This parses the xml web file descriptor so that users can
+          load files into BBB directly from the web.  The file that
+          is used must be passed as a URL to BBB on startup as a
+          command line parameter (or a Web Start application parameter)
+
+    ca.virology.baseByBase.io.DBAccess
+        - Provides access to a database.  The fact that this is abstract
+          is a little misleading.  It was defined with VOCs in mind and it
+          would be very difficult to extend it farther than that.
+          
+    ca.virology.baseByBase.TextFileFeaturedSequenceReader/Writer
+        - Writes files or Reads files in clustal and fasta format.  This 
+          defers work to the ClustalTools and FastaTools classes which are
+          able to parse and read each of those file types.
+          
+    ca.virology.baseByBase.gui.DbConnectMenu
+        - This reads in database connections from the users home directory
+          .bbb directory.  These are meshed with the system databases and
+          displayed as a list of choices in the menu.
+        - This is probably very bad form the way it's done.  This should be
+          split off into 2 classes -- one a utility class, and one a gui class
+          but it has never been an issue, so it hasn't gotten time.
+          
+    ca.virology.baseByBase.gui.Utils
+        - GUI Utilitys.  Display messages, move and resize windows, invoke
+          things on the swing thread, etc.
+    
+6) How is that done? (How to find a function)
+    - Start by looking in DiffEditorFrame or PrimaryPanel.  All top level
+      actions start there and delegate to other classes.  GUI Classes are
+      usually fully named so you can also start there.
+    
+7) How-to:
+
+    a) Add a menu item:
+        - Edit DiffEditorFrame.
+            - edit the createMenuBar method to add a line to put the
+              actual menu item in.
+            - add a nested class that is the action listener, or if the
+              work done is trivial, an anonymous listener class.  This
+              class should defer work to some other class if possible,
+              or to some method within the DiffEditorFrame.
+        - Use PrimaryPanel to do the work, or call methods in one of
+          the utility classes (SequenceTools, FeatureTools, SearchTools)
+        
+        If the menu item requires a new panel be made or a new display
+        be created, put the class in ca.virology.baseByBase.gui.  Either make it a 
+        JPanel (to be displayed by JOptionPane) or make your own window.
+        Windows are good if you want an 'apply' button that doesn't close
+        the display.  Panels are good for simple entry dialogs.
+
+    b) Add a toolbar item
+        - Edit DiffEditorFrame for the toolbar
+          on the top.
+        - Edit Primarypanel for the toolbar on the left
+        - This is essentialy the same as the menu item process, except 
+          that you can start by adding the toolbar item to the left one in 
+          PrimaryPanel.  These are items which apply to the sequence list
+          usually.  This is the ordering, visibility, etc.
+
+        - Create an image and put it in images.
+        - Edit ca.virology.baseByBase.gui.Icons and add a block for the icon you've 
+          just created.
+        - When instantiating the button, or defining the action, use the
+          Icons.getIcon() method instead of going to all the work to create
+          your own ImageIcon.
+        
+    c) Add a color scheme
+        - Create a new implementation of the ColorScheme or 
+          StrandedColorScheme interface.  StrandedColorSchemes take the
+          strand into acount when returning colors (for score and id based
+          methods).  For methods based on similarity (where the strand
+          likely doesn't matter) just use ColorScheme.
+        - Add a scheme type to the ColorScheme interface
+        - Add a block in ca.virology.baseByBase.guie.PrimaryPanel.setColorScheme(int) to
+          interpret the new type and create an instance of the scheme
+          you created above.
+
+    d) Add a new visual overview model
+        - Create a new implementation of the 
+          ca.virology.baseByBase.data.AbstractSequenceSummaryModel class.
+        - make sure that the getSequenceType method is implemented
+        - See the other implementations about how they use the SummaryIndicator
+          class to return indications about a particular index or range of 
+          indices.
+        - Edit the Factory for summary models to include the new model type.
+
+        This will automatically update the little menu that shows up in the
+        overview panel.
+
+    e) Add a user setting
+        
+    f) Fiddle with the searching.
+
+        - check out the ca.virology.lib packages
+        - Edit the SearchTools class and add another type of search method
+          there
+        - add a menu item to use the new search functionality

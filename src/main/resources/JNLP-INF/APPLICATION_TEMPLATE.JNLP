@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp codebase="https://4virology.net/tool/basebybase/" spec="1.0+" version="1.1">
+    <information>
+        <title>Base by Base: Genome Alignment Comparison</title>
+        <vendor>Dr. Chris Upton, University of Victoria, Biochemistry and Microbiology</vendor>
+        <homepage href="https://4virology.net" />
+        <description kind="">Base by Base</description>
+        <offline-allowed/>
+        <icon href="../../images/Dock_icons/bbb-webstart.png"/>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se java-vm-args="-Xmx1G" version="1.5+" />
+        <jar href="/jar/BaseByBase.jar" main="true" download="eager" />
+        <jar href="/jar/biojava-1.4.jar" main="false" download="eager" />
+        <jar href="/jar/bytecode-0.92.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.io.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.server.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.util.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.vocsdbAccess.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.DAL.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.prefs.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.messages.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.search.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.color.jar" main="false" download="eager" />
+        <jar href="/jar/ca.virology.lib.appserver.jar" main="false" download="eager" />
+        <jar href="/jar/drmaa.jar" main="false" download="eager" />
+        <jar href="/jar/jakarta-oro-2.0.8.jar" main="false" download="eager" />
+        <jar href="/jar/jakarta-regexp-1.2.jar" main="false" download="eager" />
+        <jar href="/jar/pal-1.4.jar" main="false" download="eager" />
+        <jar href="/jar/ptolemy2.jar" main="false" download="eager" />
+        <jar href="/jar/xercesImpl.jar" main="false" download="eager" />
+        <jar href="/jar/xml-apis.jar" main="false" download="eager" />
+        <property name="appclient" value="https://4virology.net/ca.virology/xml/appclient.properties" />
+        <property name="externalapps" value="https://4virology.net/ca.virology/xml/externalapps.properties" />
+    </resources>
+    <application-desc main-class="ca.virology.baseByBase.DiffEditor" >
+        <argument>-javaws</argument>
+        <argument>-defaultdb=none</argument>
+        <argument>-dbprefs=https://4virology.net/ca.virology/xml/DBPrefs.xml</argument>
+        <argument>-bbbprefs=https://4virology.net/ca.virology/xml/BBBPrefs.xml</argument>
+        <argument>-appclientprefs=https://4virology.net/ca.virology/xml/AppClientPrefs.xml</argument>
+        <argument>-externalprefs=https://4virology.net/ca.virology/xml/ExternalAppsPrefs.xml</argument>
+<argument>*</argument>
+<argument>*</argument>
+    </application-desc>
+</jnlp>
+
+
+
+
