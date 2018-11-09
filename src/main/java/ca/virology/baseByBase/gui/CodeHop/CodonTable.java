@@ -59,7 +59,16 @@ public class CodonTable {
             case '*': return 20; //stop
         }
         System.out.println("ERROR: getLookupVal() -- Bad Amino Acid Input");
-        UITools.showWarning("Non amino acid character in sequence.", CodeHopWizard.getInstance());
+        StringBuilder msg = new StringBuilder();
+        msg.append("Non-amino acid character in sequence\n\n");
+        msg.append("To identify the sequences containing non-amino acid characters:\n");
+        msg.append("\t\t1. Close the CODEHOP window\n");
+        msg.append("\t\t2. In the Tools menu, select Search › Reg. Expression Search\n");
+        msg.append("\t\t\t\t A dialog box should appear\n");
+        msg.append("\t\t3. In the text field, enter the following regular expression: [^ACDEFGHIKLMNPQRSTVWY]\n");
+        msg.append("\t\t\t\t This will find all occurrences of non-amino acid characters\n");
+        msg.append("\t\t4. Click OK");
+        UITools.showWarning(msg.toString(), CodeHopWizard.getInstance());
         return -1;
     }
 
@@ -89,7 +98,16 @@ public class CodonTable {
             case 20: return '*'; //stop
         }
         System.out.println("ERROR: getAminoAcid() -- Bad lookupVal Input");
-        UITools.showWarning("Non amino acid character in sequence.", CodeHopWizard.getInstance());
+        StringBuilder msg = new StringBuilder();
+        msg.append("Non-amino acid character in sequence\n\n");
+        msg.append("To identify the sequences containing non-amino acid characters:\n");
+        msg.append("\t\t1. Close the CODEHOP window\n");
+        msg.append("\t\t2. In the Tools menu, select Search › Reg. Expression Search\n");
+        msg.append("\t\t\t\t A dialog box should appear\n");
+        msg.append("\t\t3. In the text field, enter the following regular expression: [^ACDEFGHIKLMNPQRSTVWY]\n");
+        msg.append("\t\t\t\t This will find all occurrences of non-amino acid characters\n");
+        msg.append("\t\t4. Click OK");
+        UITools.showWarning(msg.toString(), CodeHopWizard.getInstance());
         return '-';
     }
 
