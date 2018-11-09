@@ -96,7 +96,7 @@ public class CodeHopSelectPanel extends JPanel {
         clustal = new JRadioButton("Clustal");
         noAlign = new JRadioButton("Do Not Align");
 
-        codonDropDownLabels = new String[]{"Homo sapien", "Mus musculus", "Cowpox virus", "Enterobacteria phage ES18", "Enterobacteria phage T4", "Escherichia coli O157", "Custom..", "Import Custom.."};
+        codonDropDownLabels = new String[]{"Homo sapiens", "Mus musculus", "Cowpox virus", "Enterobacteria phage ES18", "Enterobacteria phage T4", "Escherichia coli O157", "Custom..", "Import Custom.."};
         previousCodonTable = codonDropDownLabels[0];
         //selectCodonTable = new JComboBox(codonDropDownLabels);
 

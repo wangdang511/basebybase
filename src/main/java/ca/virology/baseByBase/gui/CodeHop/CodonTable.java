@@ -609,7 +609,7 @@ public class CodonTable {
         codonArray[lookupVal].add(new CodonTableEntry("TAC", 0.56, "Y"));
 
 
-        currentTableName = "Homo sapien";
+        currentTableName = "Homo sapiens";
     }
 
     public void setCowPox() {
