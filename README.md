@@ -24,7 +24,9 @@ Table of Contents
 
 ## Installation
 
-For installation help, please contact Chris Upton <[cupton@uvic.ca](mailto:cupton@uvic.ca)>
+Installation varies per system and requirements.
+
+For installation help, please contact [Chris Upton <cupton@uvic.ca>](mailto:cupton@uvic.ca)
 
 ## Documentation
 
